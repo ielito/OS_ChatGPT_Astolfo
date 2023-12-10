@@ -5,20 +5,39 @@ using ChatGPT;
 
 public class ChatGPTService : IChatGPTService
 {
-    public string GetSentimentAnalysis(string apiKey, string text)
+    public async Task<string> GetSentimentAnalysisAsync(string apiKey, string text)
     {
         var chatGPTRequest = new ChatGPTRequest(apiKey);
 
+        var response = await chatGPTRequest.ChatGPTResponseAsync(text);
+
+        return AnalyzeSentiment(response);
+    }
+
+    public string GetSentimentAnalysis(string apiKey, string text)
+    {
+        if (apiKey == null) throw new ArgumentNullException(nameof(apiKey));
+        if (text == null) throw new ArgumentNullException(nameof(text));
+
+        var chatGPTRequest = new ChatGPTRequest(apiKey);
+
+        // Chama a API e aguarda a resposta
         var response = Task.Run(async () => await chatGPTRequest.ChatGPTResponseAsync(text)).Result;
 
-        if (!response.StartsWith("Erro:"))
+        // Analisa a resposta e retorna o sentimento
+        return AnalyzeSentiment(response);
+    }
+
+    private string AnalyzeSentiment(string apiResponse)
+    {
+        if (!apiResponse.StartsWith("Erro:"))
         {
-            // Processando a resposta JSON para extrair a análise de sentimento
-            var responseJson = JObject.Parse(response);
+
+            // Processa a resposta JSON
+            var responseJson = JObject.Parse(apiResponse);
             var sentimentResponse = responseJson["choices"][0]["message"]["content"].ToString();
 
-            // Inferindo o sentimento com base no conteúdo da resposta
-            // Esta é uma forma simples e não robusta de análise de sentimentos
+            // Realiza a análise de sentimento
             if (sentimentResponse.Contains("feliz") || sentimentResponse.Contains("positivo"))
             {
                 return "Sentimento positivo";
@@ -34,7 +53,7 @@ public class ChatGPTService : IChatGPTService
         }
         else
         {
-            return "Erro ao analisar o sentimento: " + response;
+            return "Erro ao analisar o sentimento: " + apiResponse;
         }
     }
 }

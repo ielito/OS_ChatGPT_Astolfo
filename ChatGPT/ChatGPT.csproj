@@ -15,9 +15,15 @@
   <ItemGroup>
     <None Remove="resources\" />
     <None Remove="resources\astolfoApp.jpg" />
+    <None Remove="Services\" />
+    <None Remove="Request\" />
+    <None Remove="Response\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="resources\" />
+    <Folder Include="Services\" />
+    <Folder Include="Request\" />
+    <Folder Include="Response\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="resources\astolfoApp.jpg" />

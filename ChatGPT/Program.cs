@@ -9,6 +9,13 @@ class Program
         Console.WriteLine("Digite a chave da API:");
         var apiKey = Console.ReadLine();
 
+        // Adicione a verificação aqui
+        if (string.IsNullOrWhiteSpace(apiKey))
+        {
+            Console.WriteLine("API Key não pode ser vazia.");
+            return;
+        }
+
         Console.WriteLine("Digite o texto para análise:");
         var userInput = Console.ReadLine();
 
@@ -19,19 +26,17 @@ class Program
     {
         var chatGPTService = new ChatGPTService();
 
-        var responseContent = chatGPTService.GetSentimentAnalysis(apiKey, userInput);
+        // Chama o método para obter a análise de sentimento
+        var sentimentAnalysisResult = chatGPTService.GetSentimentAnalysis(apiKey, userInput);
 
-        // Aqui, consideramos a resposta bem-sucedida se não começar com "Erro:"
-        var isSuccess = !responseContent.StartsWith("Erro:");
-        var response = new ChatGPTResponse(responseContent, isSuccess);
-
-        if (response.IsSuccess)
+        // Verifica se a resposta começa com "Erro:"
+        if (!sentimentAnalysisResult.StartsWith("Erro:"))
         {
-            Console.WriteLine("Resposta do ChatGPT: " + response.ResponseContent);
+            Console.WriteLine("Análise de Sentimento: " + sentimentAnalysisResult);
         }
         else
         {
-            Console.WriteLine("Erro na resposta: " + response.ErrorMessage);
+            Console.WriteLine("Erro na análise de sentimento: " + sentimentAnalysisResult);
         }
     }
 }
