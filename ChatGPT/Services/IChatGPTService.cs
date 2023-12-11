@@ -3,7 +3,7 @@ using OutSystems.ExternalLibraries.SDK;
 
 namespace ChatGPT
 {
-    [OSInterface(Description = "Get sentiment analysis from text input", IconResourceName = "ChatGPT.resources.astolfoApp_128.png")]
+    [OSInterface(Description = "Get sentiment analysis from text input", IconResourceName = "ChatGPT.Request.astolfoApp_128.png")]
     public interface IChatGPTService
     {
         [OSAction]

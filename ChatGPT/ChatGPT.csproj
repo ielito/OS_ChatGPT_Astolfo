@@ -19,6 +19,7 @@
     <None Remove="Request\" />
     <None Remove="Response\" />
     <None Remove="resources\astolfoApp.ico" />
+    <None Remove="Request\astolfoApp_128.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="resources\" />
@@ -29,5 +30,6 @@
   <ItemGroup>
     <EmbeddedResource Include="resources\astolfoApp.jpg" />
     <EmbeddedResource Include="resources\astolfoApp.ico" />
+    <EmbeddedResource Include="Request\astolfoApp_128.png" />
   </ItemGroup>
 </Project>
