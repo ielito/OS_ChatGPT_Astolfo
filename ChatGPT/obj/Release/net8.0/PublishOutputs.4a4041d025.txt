@@ -1,0 +1,7 @@
+/Users/ielo/Library/Mobile Documents/com~apple~CloudDocs/Dev/OS_ChatGPT_Astolfo-astolfo/ChatGPT/bin/Release/net8.0/publish/ChatGPT
+/Users/ielo/Library/Mobile Documents/com~apple~CloudDocs/Dev/OS_ChatGPT_Astolfo-astolfo/ChatGPT/bin/Release/net8.0/publish/ChatGPT.dll
+/Users/ielo/Library/Mobile Documents/com~apple~CloudDocs/Dev/OS_ChatGPT_Astolfo-astolfo/ChatGPT/bin/Release/net8.0/publish/ChatGPT.deps.json
+/Users/ielo/Library/Mobile Documents/com~apple~CloudDocs/Dev/OS_ChatGPT_Astolfo-astolfo/ChatGPT/bin/Release/net8.0/publish/ChatGPT.runtimeconfig.json
+/Users/ielo/Library/Mobile Documents/com~apple~CloudDocs/Dev/OS_ChatGPT_Astolfo-astolfo/ChatGPT/bin/Release/net8.0/publish/ChatGPT.pdb
+/Users/ielo/Library/Mobile Documents/com~apple~CloudDocs/Dev/OS_ChatGPT_Astolfo-astolfo/ChatGPT/bin/Release/net8.0/publish/Newtonsoft.Json.dll
+/Users/ielo/Library/Mobile Documents/com~apple~CloudDocs/Dev/OS_ChatGPT_Astolfo-astolfo/ChatGPT/bin/Release/net8.0/publish/OutSystems.ExternalLibraries.SDK.dll
